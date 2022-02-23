@@ -1,0 +1,48 @@
+<div class="mbsc-grid" dir="rtl">
+
+  <div class="mbsc-row mbsc-row mbsc-justify-content-center">
+
+    <div class="mbsc-col-8">
+
+      <div class="mbsc-align-center">
+
+        <mbsc-note color="success">
+
+          <p style="font-size: 24px;">الطلبات السابقه</p>
+
+        </mbsc-note>
+
+      </div>
+
+    </div>
+
+    <div class="mbsc-col-8">
+
+      <p-table #dt [value]="orders" [rows]="10">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="text-align: right;">رمز الطلبيه</th>
+            <th style="text-align: right;">إسم الفرع</th>
+            <th style="text-align: right;">تاريخ الطلبيه</th>
+            <th style="text-align: right;">الحاله</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-order>
+          <tr (click)="displayOrderDetails(order.id)" style="cursor: pointer;">
+            <td style="text-align: right;">{{order.id}}</td>
+            <td style="text-align: right;">{{order.branch_name}}</td>
+            <td style="text-align: right;">{{mobi.util.datetime.formatDate('yy-mm-dd', order.order_date, mobiSettings)}}</td>
+
+            <td style="text-align: right;">{{order.order_status}}</td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+.login-page {
+  max-width: 450px;
+  margin: 50px auto 0 auto;
+  height: 210px;
+  border-radius: 8px;
+}
+
+:host::ng-deep .mbsc-mobiscroll.mbsc-form {
+  background: transparent;
+}
+
+:host::ng-deep .mbsc-mobiscroll .mbsc-form-group-title {
+  background: transparent;
+  text-align: center;
+  color: darkblue;
+  margin-top: 60px;
+  font-size: 30px;
+}

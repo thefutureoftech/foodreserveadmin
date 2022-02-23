@@ -1,0 +1,18 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+:host::ng-deep .p-sidebar {
+
+  background: lightgreen;
+
+}
+
+:host::ng-deep .p-splitter {
+
+  background: transparent;
+
+  border: none;
+
+}

@@ -1,0 +1,48 @@
+
+<mbsc-page>
+
+  <mbsc-note color="success" style="text-align: center; font-size: 18px;">التقارير</mbsc-note>
+
+
+  <p-table #dt [value]="ledgers" [rows]="10" dir="rtl">
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="change_date" style="text-align: center;">التاريخ</th>
+        <th style="text-align: center;">إسم الفرع</th>
+        <th style="text-align: center;">رمز المخزن</th>
+        <th style="text-align: center;">رمز الصفه</th>
+        <th pSortableColumn="stock_name" style="text-align: center;">السلعه</th>
+        <th style="text-align: center;">نوع العمليه</th>
+        <th style="text-align: center;">الكميه السابقه</th>
+        <th style="text-align: center;">وزن الكميه السابقه</th>
+        <th style="text-align: center;">كمية العمليه</th>
+        <th style="text-align: center;">وزن كمية العمليه</th>
+        <th style="text-align: center;">الكميه الجديده</th>
+        <th style="text-align: center;">وزن الكميه الجديده</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-ledger>
+      <tr style="cursor: pointer;">
+        <td style="text-align: center;">{{mobi.util.datetime.formatDate('yy-mm-dd', ledger.change_date, mobiSettings)}}</td>
+        <td style="text-align: center;">{{ledger.branch_name}}</td>
+        <td style="text-align: center;">{{ledger.store_name}}</td>
+        <td style="text-align: center;">{{ledger.stack_name}}</td>
+        <td style="text-align: center;">{{ledger.stock_name}}</td>
+        <td style="text-align: center; text-decoration: underline; color: blue;" (click)="goToOrder(ledger.request_id)">{{ledger.request_type}}</td>
+        <td style="text-align: center;">{{ledger.previous_quantity}}</td>
+        <td style="text-align: center;">{{ledger.previous_quantity_weight}}</td>
+        <td style="text-align: center;">{{ledger.changed_quantity}}</td>
+        <td style="text-align: center;">{{ledger.changed_quantity_weight}}</td>
+        <td style="text-align: center;">{{ledger.new_quantity}}</td>
+        <td style="text-align: center;">{{ledger.new_quantity_weight}}</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+
+</mbsc-page>
+
+
+

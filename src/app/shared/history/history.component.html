@@ -1,0 +1,34 @@
+
+<mbsc-page>
+
+  <mbsc-note color="success" style="text-align: center; font-size: 18px;">سجل الإجراءات</mbsc-note>
+
+
+  <p-table #dt [value]="action_logs" [rows]="10" dir="rtl">
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="text-align: right;">تاريخ العمليه</th>
+        <th style="text-align: right;">إسم العمليه</th>
+        <th style="text-align: right;">من حاله</th>
+        <th style="text-align: right;">إلى حاله</th>
+        <th style="text-align: right;">منجز العمليه</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-log>
+      <tr style="cursor: pointer;">
+        <td style="text-align: right;">{{mobi.util.datetime.formatDate('yy-mm-dd', log.action_date, mobiSettings)}}</td>
+        <td style="text-align: right;">{{log.action_name}}</td>
+        <td style="text-align: right;">{{log.from_status}}</td>
+        <td style="text-align: right;">{{log.to_status}}</td>
+        <td style="text-align: right;">{{log.user_name}}</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+
+</mbsc-page>
+
+
+

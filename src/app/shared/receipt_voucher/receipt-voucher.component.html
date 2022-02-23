@@ -1,0 +1,212 @@
+<app-header></app-header>
+
+
+<div class="mbsc-grid-fixed" style="margin-top: 30px;">
+
+
+  <div class="mbsc-row mbsc-justify-content-center">
+
+    <div class="mbsc-col-5 mbsc-offset-4" style="margin-right: 30px;">
+      <p style="font-size: 24px; font-weight: bold;">Receipt Voucher</p>
+      <p style="font-size: 24px; font-weight: bold; margin-left: 20px;">سند القبض</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="mbsc-grid-fixed" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+
+    <div class="mbsc-col-1">
+      <span style="font-size: 18px;font-weight: bold">رقم/No</span>
+    </div>
+    <div class="mbsc-col">
+      <span style="font-size: 18px; font-weight: bold; color: red">{{this.receipt_voucher.number}}</span>
+    </div>
+
+    <div class="mbsc-col-2" style="margin-right: 100px;">
+      <span style="font-size: 18px; font-weight: bold;">التاريخ/Date</span>
+    </div>
+    <div class="mbsc-col">
+
+      <div class="mbsc-row mbsc-justify-content-center">
+        <div class="mbsc-col-4"><span style="font-size: 18px;">{{mobi.util.datetime.formatDate('yy-mm-dd', this.receipt_voucher.receipt_date, mobiSettings)}}</span>
+        </div>
+        <div class="mbsc-col"></div>
+        <div class="mbsc-col"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="mbsc-grid-fixed" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+
+    <div class="mbsc-col-2">
+      <span style="font-size: 18px; font-weight: bold">رقم الموزع/Distributer No.</span>
+    </div>
+    <div class="mbsc-col">
+      <span >{{this.receipt_voucher.bill?.customer_number}}</span>
+    </div>
+
+    <div class="mbsc-col-2" style="margin-right: 100px;">
+      <span style="font-size: 18px; font-weight: bold;">الفرع/Branch</span>
+    </div>
+    <div class="mbsc-col">
+
+      <div class="mbsc-row mbsc-justify-content-center">
+        <div class="mbsc-col-4"><span style="font-size: 18px;">{{this.receipt_voucher.branch_name}}</span>
+        </div>
+        <div class="mbsc-col"></div>
+        <div class="mbsc-col"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="mbsc-grid md-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-1" style="font-weight: bold;">استلمنا من</div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1"><span>{{this.receipt_voucher.bill?.customer_name}}</span></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" style="font-weight: bold;">Received</div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-2" style="font-weight: bold; text-align: left;">المبلغ وقدره ريال عماني</div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" style="border-color: black; border-width: 10px; border: 4px solid black; text-align: center;"><span>{{totalAmount}}</span></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-" style="font-weight: bold;">Amount OMR</div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-1" style="font-weight: bold;">المبلغ بالحروف</div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-2" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{amountInArabicWord}}</span></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-2" style="font-weight: bold;">رقم الشيك/Check No.</div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-2" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{this.receipt_voucher.bill?.customer_check_no}}</span></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-" ></div>
+    <div class="mbsc-col-2" style="font-weight: bold;">تاريخ الإستحقاق/Due Date</div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" >{{mobi.util.datetime.formatDate('yy-mm-dd', this.receipt_voucher.bill?.customer_payment_due_date, mobiSettings)}}</div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px; margin-bottom: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-2" style="font-weight: bold;">حساب على بنك/Bank</div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-2" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{this.receipt_voucher.bill?.customer_bank_details?.bankName}}</span></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+    <div class="mbsc-col-1" ></div>
+
+  </div>
+
+</div>
+
+<div style="max-width: 1000px; margin:0 auto;" dir="rtl">
+
+  <p-table #dt  [rows]="10" styleClass="p-datatable-gridlines" style="max-width: 200px;" dir="rtl">
+
+    <ng-template pTemplate="header" style="background: white;">
+      <tr>
+        <th style="text-align: center;">رقم الفاتوره/Invoice Number</th>
+        <th style="text-align: center;">الرقم/Amount</th>
+        <th style="text-align: center;">التاريخ/Date</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+      <tr>
+        <td style="text-align: center; background: white; font-weight: normal;">{{this.receipt_voucher.bill?.number}}</td>
+        <td style="text-align: center; background: white; font-weight: normal;">{{totalAmount}}</td>
+        <td style="text-align: center; background: white; font-weight: normal;">{{mobi.util.datetime.formatDate('yy-mm-dd', this.receipt_voucher.bill?.bill_date, mobiSettings)}}</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+
+</div>
+
+
+
+

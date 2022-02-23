@@ -1,0 +1,59 @@
+<mbsc-form [options]="formSettings">
+
+  <div class="mbsc-grid" style="margin-top: 30px;">
+
+    <div class="mbsc-row mbsc-justify-content-center">
+
+      <img src="../../../assets/zad_logo.png" width="200" height="200" alt="" style="border-radius: 30px;">
+
+    </div>
+
+  </div>
+
+  <mbsc-form-group-title>تسجيل الدخول للإداره</mbsc-form-group-title>
+
+  <mbsc-card [options]="cardSettings" class="login-page" style="background: white;">
+
+    <form [formGroup]="form" novalidate>
+
+      <div class="mbsc-grid">
+
+        <div class="mbsc-row mbsc-justify-content-center">
+
+          <div class="mbsc-col">
+
+            <mbsc-input formControlName="email" label="البريد الإلكتروني">البريد الإلكتروني</mbsc-input>
+
+          </div>
+
+        </div>
+
+        <div class="mbsc-row mbsc-justify-content-center">
+
+          <div class="mbsc-col">
+
+            <mbsc-input type="password" formControlName="password" label="الرمز السري" [password-toggle]="true">الرمز
+              السري</mbsc-input>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </mbsc-card>
+
+  <div class="mbsc-grid" style="margin-top: 30px;">
+
+    <div class="mbsc-row mbsc-justify-content-center">
+
+      <button pButton type="button" label="تسجيل الدخول" (click)="login()"></button>
+
+    </div>
+
+  </div>
+
+
+</mbsc-form>

@@ -1,0 +1,312 @@
+<app-header></app-header>
+
+
+<div class="mbsc-grid-fixed" style="margin-top: 30px;">
+
+
+  <div class="mbsc-row mbsc-justify-content-center">
+
+    <div class="mbsc-col-5 mbsc-offset-4" style="margin-right: 30px;">
+      <p style="font-size: 24px; font-weight: bold;">Issue Voucher</p>
+      <p style="font-size: 24px; font-weight: bold; margin-left: 20px;">سند الصرف</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-1" style="font-weight: bold;">رقم/No</div>
+    <div class="mbsc-col-1">
+      <div class="mbsc-col-1" style="text-align: center; color: red"><span>{{this.issue_voucher.number}}</span></div>
+    </div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1" style="font-weight: bold;">التاريخ/Date</div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1">{{mobi.util.datetime.formatDate('yy-mm-dd', this.issue_voucher.issue_voucher_date,
+      mobiSettings)}}</div>
+
+  </div>
+
+</div>
+
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-1" style="font-weight: bold;">إسم الوكيل</div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{issue_voucher.bill?.customer_name}}</span></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1" style="font-weight: bold;">Distributer</div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-2" style="font-weight: bold;">رقم الوكيل/Distrubuter No</div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{issue_voucher.bill?.customer_number}}</span></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-2" style="font-weight: bold;">رقم السياره/Vehicle No</div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{issue_voucher.customer_car_no}}</span></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+
+  </div>
+
+</div>
+
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+
+    <div class="mbsc-col">
+
+      <p-table #dt2 [value]="issue_voucher.items!" styleClass="p-datatable-gridlines">
+
+        <ng-template pTemplate="header" style="background: white;">
+          <tr>
+            <th style="text-align: center;">
+              <p>رقم التصنيف</p>
+              <p>Item No</p>
+            </th>
+            <th style="text-align: center;">
+              <p>السلعه</p>
+              <p>COMMODITY</p>
+            </th>
+            <th style="text-align: center;">
+              <p>عدد الأكياس المطلوبه</p>
+              <p>Qyt. Bags</p>
+            </th>
+            <th style="text-align: center;">
+              <p>الوحده (كجم)</p>
+              <p>Unit Kg</p>
+            </th>
+            <th style="text-align: center;">
+              <p>رمز السلعه</p>
+              <p>COMMODITY CODE</p>
+            </th>
+            <th style="text-align: center;">
+              <p>رقم الشحنه</p>
+              <p>CONS NO</p>
+            </th>
+            <th style="text-align: center;">
+              <p>رقم المخزن</p>
+              <p>W/H NO</p>
+            </th>
+            <th style="text-align: center;">
+              <p>رقم الصفه</p>
+              <p>STACK NO</p>
+            </th>
+            <th style="text-align: center;">
+              <p>عدد الأكياس المنصرفه</p>
+              <p>BAGS ISSUED</p>
+            </th>
+            <th style="text-align: center;">
+              <p>مجموع الوزن كجم</p>
+              <p>WEIGHT KG</p>
+            </th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+          <tr>
+            <td style="text-align: center;">{{rowIndex + 1}}</td>
+            <td style="text-align: center;">{{item.stoc_name}}</td>
+            <td style="text-align: center;">{{item.quanitity}}</td>
+            <td style="text-align: center;">{{item.unit_weight}}</td>
+            <td style="text-align: center;">{{item.account_code}}</td>
+            <td style="text-align: center;">{{item.container_no}}</td>
+            <td style="text-align: center;">{{item.store_label}}</td>
+            <td style="text-align: center;">{{item.stack_label}}</td>
+            <td style="text-align: center;">{{item.dispatched_quantity}}</td>
+            <td style="text-align: center;">{{item.total_weight}}</td>
+
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+          <tr>
+            <td style="text-align: center; background: white; font-weight: bold;"></td>
+            <td style="text-align: center; background: white;"></td>
+            <td style="text-align: center; background: white;"></td>
+            <td style="text-align: center; background: white;"></td>
+            <td style="text-align: center; background: white;"></td>
+            <td style="text-align: center; background: white;"></td>
+            <td style="text-align: center; background: white;"></td>
+            <td style="text-align: center; background: white;"></td>
+            <td style="text-align: center; background: white;"></td>
+            <td style="text-align: center; background: white; font-weight: normal;">{{issue_voucher.total_weight}}</td>
+
+          </tr>
+        </ng-template>
+
+      </p-table>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-3" style="font-weight: bold;">بطاقة ميزان رقم (قبل الشحن)/W.B.T. NO</div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{issue_voucher.weight_card_no_before_loading}}</span>
+    </div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-3" style="font-weight: bold;">الوزن قبل الشحن/W.B. WEIGHT</div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{issue_voucher.weight_before_loading}}</span></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-2" style="font-weight: bold;">فاتوره رقم/INV. NO</div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{issue_voucher.bill?.number}}</span></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+
+  </div>
+
+</div>
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-3" style="font-weight: bold;">بطاقة ميزان رقم (بعد الشحن)/W.B.T. NO</div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{issue_voucher.weight_card_no_after_loading}}</span>
+    </div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+
+  </div>
+
+</div>
+
+
+<div class="mbsc-grid" dir="rtl" style="margin-top: 30px;">
+
+  <div class="mbsc-row mbsc-justify-content-center">
+    <div class="mbsc-col-3" style="font-weight: bold;">الوزن بعد الشحن/W.B. WEIGHT</div>
+    <div class="mbsc-col-1" style="text-align: center;"><span>{{issue_voucher.weight_after_loading}}</span></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+    <div class="mbsc-col-1"></div>
+
+  </div>
+
+</div>

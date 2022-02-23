@@ -1,0 +1,57 @@
+<mat-toolbar style="background-color: lightgreen">
+
+  <mat-toolbar-row>
+
+    <span style="padding-right: 10px; cursor: pointer;">
+      <img src="../../../assets/zad_logo.png" width="50" height="50" alt="" style="border-radius: 20px;"
+        (click)="goHome()">
+    </span>
+
+    <span>
+      الهيئه العامه للمخازن والإحتياطي الغذائي
+    </span>
+
+    <span style="margin-left: 40%; font-weight: bolder;">خدمات إداريه</span>
+
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button (click)="openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+
+<p-sidebar [(visible)]="displayMenu" position="right" (onHide)="menuClosed()">
+
+  <span style="margin: auto;" class="p-sidebar-header">
+    <img src="../../../assets/zad_logo.png" width="100%" height="100" alt="">
+  </span>
+
+  <p-splitter [panelSizes]="[20,80]" layout="vertical">
+
+    <ng-template pTemplate>
+
+      <div class="col flex align-items-center justify-content-center">
+        <button pButton pRipple type="button" label="التقارير" class="p-button-text" icon="pi pi-plus-circle" (click)="openLedgers()"></button>
+      </div>
+
+    </ng-template>
+
+    <ng-template pTemplate>
+
+      <div class="col flex align-items-center justify-content-center">
+        <button pButton pRipple type="button" label="الخروج" class="p-button-text" icon="pi pi-unlock" (click)="logout()"></button>
+      </div>
+
+    </ng-template>
+
+  </p-splitter>
+
+</p-sidebar>
+
+<p-toast position="top-center"></p-toast>
+
+<router-outlet></router-outlet>

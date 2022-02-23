@@ -1,0 +1,14 @@
+:host::ng-deep .p-datatable .p-datatable-thead > tr > th  {
+
+  background: transparent;
+
+}
+
+:host::ng-deep  .p-datatable .p-datatable-tfoot > tr > td  {
+
+  text-align: right;
+}
+
+
+
+
