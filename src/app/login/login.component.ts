@@ -49,7 +49,13 @@ this.authService.logout();
 
       if (user) {
 
-        this.router.navigateByUrl('/');
+        console.log('going home');
+
+        this.router.navigateByUrl('/home').then(result => {
+
+          console.log('going home is ok');
+
+        });
 
       }
 

@@ -1,1 +1,17 @@
-{}
+{
+  "hosting": {
+    "public": "dist/food-reserve-admin",
+    "site": "foodreserveadmin",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
